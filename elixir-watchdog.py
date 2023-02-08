@@ -9,7 +9,7 @@ restart_counter = 0
 last_restart_time = "NONE YET"
 
 def get_logs():
-    logs = subprocess.run(log_command.split(), stderr=subprocess.PIPE, text=True).stderr
+    logs = subprocess.run(log_command.split(), capture_output=True, text=True).stdout
     return logs
 
 while True:
